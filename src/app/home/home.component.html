@@ -1,1 +1,13 @@
 <p>home works!</p>
+<div class="container" *ngIf="userData">
+  <div class="row">
+      <div class="col-6">
+      <img [src]="userData.data.avatar" alt="" srcset="">
+      </div>
+      <div class="col-6">
+        <p>Email:  {{userData?.data.email}}</p>
+        <p>Nombre: {{userData?.data.first_name}}</p>
+        <p>Apellido: {{userData?.data.last_name}}</p>
+      </div>
+  </div>
+</div>
