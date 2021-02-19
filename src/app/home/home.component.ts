@@ -18,6 +18,14 @@ export class HomeComponent implements OnInit {
       this.userData=data;
       console.log(this.userData);
     });
+  }
 
+  logout(){
+    this.userService.logout();
+    console.log("Hasta luego " + this.userData.data.first_name);
+  }
+
+  canDeactivate() {
+    return window.confirm("Are you sure?")
   }
 }

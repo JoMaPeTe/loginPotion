@@ -10,13 +10,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersService } from './users/users.service';
 import { CookieService } from 'ngx-cookie-service';
 import { HomeComponent } from './home/home.component';
+import { CanActivateViaAuthGuardService } from './guards/can-activate-via-auth-guard.service';
+import { FilmsComponent } from './films/films.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    FilmsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,7 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [UsersService, CookieService],
+  providers: [UsersService, CookieService, CanActivateViaAuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
